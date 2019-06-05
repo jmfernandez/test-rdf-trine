@@ -315,11 +315,11 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 SELECT ?res WHERE {
-	?x rdfs:subClassOf* ?res .
-	?x rdfs:label ?q .
 	{ ?x a owl:Class }
 	UNION
 	{ ?x a rdfs:Class } .
+	?x rdfs:label ?q .
+	?x rdfs:subClassOf* ?res .
 }
 SPARQL
 	
